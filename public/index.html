@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- css link -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style2.css">
+
+  <!-- flowbite js -->
+  <!-- <script src="../node_modules/flowbite/src/flowbite.js"></script> -->
+  <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/scroll.js"></script>
+
+  <!-- navbar js -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+  <title>ICMSA 2022</title>
+</head>
+<body class="">
+
+
+<!-- Navbar Here -->
+<div class=" w-full text-gray-700 bg-white z-50 fixed top-0 shadow-lg py-1 ">
+  <div x-data="{ open: false }"
+    class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="p-4 flex flex-row items-center justify-between">
+      <a href="index.html"
+        class="text-2xl font-bold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA 2022</a>
+      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+        href="speaker.html">Speaker</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+        href="callforpaper.html">Call for Papers</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+        href="guidelines.html">Guidelines</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+        href="submission.html">Submission</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+        href="contact.html">Contact</a>
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:hover:bg-sky-300 focus:outline-none focus:shadow-outline">
+          <span>More</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300focus:outline-none focus:shadow-outline"
+              href="#">About IMT-GT</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+              href="#">Previous Conferences</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg   md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+              href="#">Zoom Background</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
+              href="#">Committee</a>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+  </div>
+</div>
+<!-- End of Navbar -->
+
+<!-- Header -->
+<div class="mt-16">
+
+
+  <div class=" mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 h-screen  w-full pb-32  bg-gradient-to-t from-sky-500 to-indigo-500 ">
+    <div class="text-white flex flex-wrap lg:ml-20 lg:items-center items-center justify-center md:justify-start max-w-xl mt-28 md:my-36">
+      <img src="img/3d-flame-diagrams.png" alt="Man" class=" drop-shadow-2xl md:hidden  w-3/5 logo-animation mb-10 ">
+      <img src="img/3logos-new.png" alt="" srcset="" class="mb-4 md:w-3/4 md:h-3/4">
+      <h1 class="font-bold text-4xl md:text-6xl lg:text-7xl text-center md:text-left">ICMSA 2022</h1>
+      <h2 class="font-bold text-xl md:text-3xl lg:text-3xl text-center md:text-left"> The 18th IMT-GT International Conference on Mathematics, Statistics and their Applications.</h2>
+        <div class="mt-5">
+          <p class=" py-2 px-5 mr-2 mb-2 text-sm font-bold text-gray-900 bg-white rounded-full border border-gray-200 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 shadow-lg " >17 - 19 October 2022</p>
+        </div>
+        
+        <img src="img/3d-flame-diagrams.png" alt="Man" class=" drop-shadow-2xl  w-1/4 logo-animation md:absolute  md:mt-0 hidden lg:block right-36 ">
+    </div>
+  </div>
+
+  
+  <div class="  h-96 flex items-center justify-center" id="fade">
+    <div class="mx-2 text-center">
+      <h2 class=" p-2 font-bold drop-shadow-xl text-3xl  md:text-4xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+        “Advancing Data Science in Accelerating <br> Achievement of SDGs”
+      </h2>
+    </div>
+  </div>
+
+
+
+
+  <div class="min-w-screen h-96  flex items-center justify-center px-5 py-5" x-data="timer()"
+    x-init="countdown()">
+    <div class="text-blue-600 ">
+      
+      <h1 class=" text-lg md:text-3xl text-center mb-3 text-gray-800 ">The 18th IMT-GT ICMSA 2022 Will Start in </h1>
+      <div class="text-3xl md:text-6xl text-center flex w-full items-center justify-center">
+        <div class="md:w-28 mx-1 p-3 bg-gradient-to-t from-sky-500 to-indigo-500 text-white rounded-2xl">
+          <div class="font-semibold leading-none" x-text="days">00</div>
+          <div class="font-semibold uppercase text-xs md:text-sm leading-none">Days</div>
+        </div>
+        <div class="md:w-24 mx-1 p-3 bg-gradient-to-t from-sky-500 to-indigo-500 text-white rounded-2xl">
+          <div class="font-semibold leading-none" x-text="hours">00</div>
+          <div class="font-semibold uppercase text-xs md:text-sm leading-none">Hours</div>
+        </div>
+        <div class="md:w-24 mx-1 p-3 bg-gradient-to-t from-sky-500 to-indigo-500 text-white rounded-2xl">
+          <div class="font-semibold leading-none" x-text="minutes">00</div>
+          <div class="font-semibold uppercase text-xs md:text-sm leading-none">Minutes</div>
+        </div>
+        <div class="text-lg md:text-2xl mx-1 font-normal">and</div>
+        <div class="md:w-24 mx-1 p-3 bg-gradient-to-t from-sky-500 to-indigo-500 text-white rounded-2xl">
+          <div class="font-semibold leading-none" x-text="seconds">00</div>
+          <div class="font-semibold uppercase text-xs md:text-sm leading-none">Seconds</div>
+          <!-- <div class="hidden md:block font-semibold uppercase text-sm leading-none">Seconds</div> -->
+        </div>
+      </div>
+      <p class="text-sm text-center mt-3">17 - 19 October 2022</p>
+    </div>
+  </div>
+
+
+
+<div class="container  mx-auto w-full h-full mt-20">
+  <div class="flex items-center justify-center">
+    <div class="mx-2 text-center">
+      <h2
+        class=" p-2 font-bold drop-shadow-xl text-2xl xs:text-3xl md:text-3xl lg:text-3xl  text-gray-800">
+        The Timeline of ICMSA 2022
+      </h2>
+    </div>
+  </div>
+  <div class="relative wrap overflow-hidden p-10 h-full">
+    <div class="border-2-2 absolute border-opacity-20 border-gray-800 h-full border" style="left: 50%"></div>
+    <!-- right timeline -->
+    <div class="mb-8 flex justify-between items-center w-full right-timeline">
+      <div class="order-1 w-5/12"></div>
+      <div class="z-20 flex items-center order-1 bg-gray-800  shadow-xl w-8 h-8 rounded-full">
+        <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+      </div>
+      <div class="order-1 text-white bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+        <h3 class="mb-3 font-bold  md:text-xl text">Call for Full Paper Acceptance</h3>
+        <p class="text-sm leading-snug tracking-wide  text-opacity-100">15 April 2022 - 15 July 2022</p>
+      </div>
+    </div>
+
+    <!-- left timeline -->
+    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+      <div class="order-1 w-5/12"></div>
+      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+      </div>
+      <div class="order-1 text-white bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+        <h3 class="mb-3 font-bold text-white md:text-xl">Notification</h3>
+        <p class="text-sm leading-snug tracking-wide text-opacity-100">15 August 2022</p>
+      </div>
+    </div>
+    
+    <!-- right timeline -->
+    <div class="mb-8 flex justify-between items-center w-full right-timeline">
+      <div class="order-1 w-5/12"></div>
+      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+      </div>
+      <div class="order-1 text-white bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+        <h3 class="mb-3 font-bold md:text-xl">Camera Ready Submission</h3>
+        <p class="text-sm leading-snug tracking-wide text-opacity-100">Before 15 September 2022</p>
+      </div>
+    </div>
+
+    <!-- left timeline -->
+    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+      <div class="order-1 w-5/12"></div>
+      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
+      </div>
+      <div class="order-1 text-white bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+        <h3 class="mb-3 font-bold text-white md:text-xl">Conference Date</h3>
+        <p class="text-sm leading-snug tracking-wide text-opacity-100">17-18 October 2022</p>
+      </div>
+    </div>
+
+    <!-- right timeline -->
+    <div class="mb-8 flex justify-between items-center w-full right-timeline">
+      <div class="order-1 w-5/12"></div>
+      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+        <h1 class="mx-auto font-semibold text-lg text-white">5</h1>
+      </div>
+      <div class="order-1 text-white bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+        <h3 class="mb-3 font-bold  md:text-xl">Banda Aceh City Tour <br>/Sabang Tour</h3>
+        <p class="text-sm leading-snug tracking-wide  text-opacity-100">19 October 2022</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <div
+    class=" flex justify-between items-center mx-auto pb-20 px-8 md:px-14 lg:px-24 md:w-full h-1/2  w-full mb-20 md:mb-0 ">
+    <img src="img/3d-flame-laptop-to-the-left.png" alt="Laptop"
+      class=" drop-shadow-2xl  w-2/6 hidden md:block lg:block lg:ml-5 ">
+    <div
+      class=" text-gray-800 grid flex-wrap lg:ml-20 lg:items-center md:items-center justify-center justify-items-center md:justify-start max-w-3xl mt-28 md:my-36">
+      <img src="img/3d-flame-laptop-to-the-left.png " alt="Laptop"
+        class=" drop-shadow-xl  w-3/4  md:hidden   ">
+      <h1 class=" font-bold text-3xl md:text-3xl lg:text-4xl text-center md:text-left mt-10">About ICMSA 2022</h1>
+      <p class=" mt-4 text-base md:text-base lg:text-lg text-center md:text-left lg:text-left"> The 18th IMT-GT International Conference on Mathematics, Statistics and Their Applications (ICMSA 2022) is initiated by
+      <a href="https://imtgt.org/" target="_blank" class="hover:underline"><strong>IMT-GT (Indonesia-Malaysia-Thailand Growth Triangle)</strong></a> consortium to promote mathematics and statistics in the region. The
+      purpose of the conference is to bring together mathematicians, statisticians, academics and students from the region of
+      Indonesia, Malaysia, and Thailand, as well as any other regions around the world, to share knowledge, expertise, and the
+      recent development of mathematics and statistics in the form of plenary presentations and related social events</p>
+    </div>
+  </div>
+  
+
+
+<div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+  <div>
+    <a title="Syiah Kuala University" href="https://usk.ac.id/" target="_blank"
+      class="block w-10 h-10 md:w-14 md:h-14 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+      <img class="object-cover object-center  w-full h-full rounded-full"
+        src="img/usk.png" />
+    </a>
+  </div>
+</div>
+
+
+
+</div>
+<!-- Footer -->
+<hr>
+<footer class="p-3 bg-white sm:p-4 ">
+  <div class="  items-center sm:justify-between">
+    <p class="text-sm text-gray-700 text-center">© 2022 <a href="#"
+        class="hover:underline">The 18th IMT-GT ICMSA</a>. All Rights Reserved. <br>
+    <span> Developed by Syiah Kuala University.</span> </p>
+
+  </div>
+</footer>  
+<!-- End of Footer -->
+
+
+</body>
+</html> 
+
