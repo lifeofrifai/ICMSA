@@ -7,7 +7,7 @@ function timer() {
     minutes: "00",
     seconds: "00",
     endTime: new Date(
-      "October 17, 2022 23:59:59 GMT+7"
+      "April 10, 2023 23:59:59 GMT+7"
     ).getTime(),
     now: new Date().getTime(),
     timeLeft: 0,

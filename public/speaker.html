@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="shortcut icon" type="icon" href="img/icon/usk-icon.png" />
+
   <!-- css link -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/style2.css">
@@ -19,19 +21,43 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-  <title>ICMSA 2022</title>
+  <title>Speaker</title>
+  <meta name="description"
+    content="The 18th IMT-GT International Conference on Mathematics, Statistics and Their Applications (ICMSA2023) is initiated by IMT-GT (Indonesia-Malaysia-Thailand Growth Triangle) consortium to promote mathematics and statistics in the region. The purpose of the conference is to bring together mathematicians, statisticians, academics and students from the region of Indonesia, Malaysia, and Thailand, as well as any other regions around the world, to share knowledge, expertise, and the recent development of mathematics and statistics in the form of plenary presentations and related social events." />
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <meta http-equiv="Pragma" CONTENT="no-cache">
+  <meta http-equiv=expires content=0>
+  <meta http-equiv="Keywords"
+    content="Conference, ICMSA2023, ICMSA 2023, ICMSA, icmsa, icmsa2023, icmsa 2023, icmsa usk, 18th IMT-GT, Conference on Mathematics, Statistics, Syiah Kuala University, Universitas Syiah Kuala">
+  <meta name="Author" content="ICMSA2023">
+  <meta name="Title"
+    content="ICMSA 2023 - The 18th IMT-GT International Conference on Mathematics, Statistics and their Applications">
+  <meta name="Copyright" content="2023" />
+  <meta name="Robots" content="all">
+
 </head>
-<body class="">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRJCNQ7JBQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRJCNQ7JBQ');
+</script>
+
+<body class="bg-white">
 
 
 <!-- Navbar Here -->
-<div class=" w-full text-gray-700 bg-white z-50 fixed top-0 shadow-lg py-1 ">
+<div class=" w-full text-gray-700 bg-white z-40 fixed top-0 shadow-lg py-1  ">
   <div x-data="{ open: false }"
     class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
     <div class="p-4 flex flex-row items-center justify-between">
-      <a href="index.html"
-        class="text-2xl font-bold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA
-        2022</a>
+      <a href="index"
+        class=" text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA
+        2023</a>
       <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
           <path x-show="!open" fill-rule="evenodd"
@@ -45,18 +71,89 @@
     </div>
     <nav :class="{'flex': open, 'hidden': !open}"
       class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-        href="speaker.html">Speaker</a>
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-        href="callforpaper.html">Call for Papers</a>
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-        href="guidelines.html">Guidelines</a>
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-        href="contact.html">Contact</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="index">Home</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold  text-sky-600  md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="speaker">Speaker</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600  link link-underline link-underline-black"
+        href="callforpaper">Call for Papers</a>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'For Authors' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="program">Program Schedule</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="info-program">Information Program</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                      href="fee-venue">Registration Fee</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="guidelines">Paper Submission Guidelines</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="paper-template">Paper Template</a>
+                  <!-- <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="ieee-pdf">IEEE PDF eXpress Guidelines</a> -->
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600" target="_blank"
+                    href="https://edas.info/doc/authors.html">EDAS Submission Guidelines</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="flyer">2023 ICMSA Flyer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'Committees' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                  href="advisory-board">Advisory Board</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="technical-program">Technical Program Committee</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="organizing-committee">Organizing Committee</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div @click.away="open = false" class="relative" x-data="{ open: false }">
         <button @click="open = !open"
-          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:hover:bg-sky-300 focus:outline-none focus:shadow-outline">
-          <span>More</span>
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+          <span>Others</span>
           <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
             class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
             <path fill-rule="evenodd"
@@ -71,18 +168,15 @@
           x-transition:leave-end="transform opacity-0 scale-95"
           class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
           <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300focus:outline-none focus:shadow-outline"
-              href="#">About IMT-GT</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-              href="#">Previous Conferences</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg   md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-              href="#">Zoom Background</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-              href="#">Committee</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="https://imtgt.org/about-imt-gt/" target="_blank">About IMT-GT</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="previous">Previous Conferences</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 "
+              href="contact">Contact</a>
           </div>
         </div>
       </div>
-
     </nav>
   </div>
 </div>
@@ -93,54 +187,68 @@
 
 
 <div>
-    <div class=" md:mt-44 h-52 flex items-center justify-center" id="fade">
+    <div class=" md:mt-36 h-52 flex items-center justify-center" id="fade">
       <div class="mx-2 text-center">
         <h2
-          class=" p-2 font-bold drop-shadow-xl text-3xl md:text-3xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
-          Announcing Our Keynote Speakers
+          class=" p-2 font-bold drop-shadow-xl text-4xl md:text-4xl lg:text-6xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+          Keynote Speakers
         </h2>
       </div>
     </div>
     
     
-    <div class="container flex items-center justify-center">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-9 ">
-        <div class="hover:scale-105 max-w-sm bg-white hover:bg-gray-100 rounded-lg border border-gray-200 shadow-xl mx-4">
-            <img class="rounded-t-lg " src="img/prof marwan.png" alt="">
-          <div class="p-5">
-            <h5 class=" text-2xl font-bold tracking-tight text-gray-900">Prof. Dr. Ir. Marwan, M.Sc</h5>
-            <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">Rector of Syiah Kuala University, Banda Aceh
-            </h5>
-          </div>
+    <div class=" flex items-center justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-12 ">
 
-        </div>
-        <div class="hover:scale-105 max-w-sm bg-white hover:bg-gray-100 rounded-lg border border-gray-200 shadow-xl mx-4">
-            <img class="rounded-t-lg" src="img/med-tri-hanggono.jpg" alt="">
-          <div class="p-5">
-            <h5 class=" text-2xl font-bold tracking-tight text-gray-900">Prof. Dr. dr. med. Tri Hanggono Achmad</h5>
-            <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">Rector of Padjajaran University, Bandung</h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-              acquisitions
-              of 2021 so far, in reverse chronological order.</p>
-    
+
+        <div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-4xl mx-4 md:mx-0">
+          <img class="object-cover w-full rounded-t-lg h-full  md:w-48 md:rounded-none md:rounded-l-lg" src="img/sebastian-vollmer.png" alt="">
+          <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class=" text-2xl md:text-3xl font-bold tracking-tight text-gray-900">Prof. Dr. Sebastian Vollmer</h5>
+              <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">University of Göttingen, Germany</h5>
+              <h5 class="mb-2 text-lg font-light tracking-tight text-gray-900 ">"Coming Soon"</h5>
+              <div class="p-0.5 bg-gradient-to-br from-sky-500 to-indigo-500"></div>
+              <p class="mb-3 font-normal text-gray-700 text-justify">
+                Sebastian Vollmer is Professor of Development Economics and currently serves as Director of the Centre for Modern Indian Studies at the University of Göttingen. His research examines the linkages between poverty and health in low- and middle-income countries. Sebastian Vollmer studied Mathematics and Economics at the University of Göttingen and also received his PhD in Economics from the University of Göttingen. He was Postdoctoral Research Fellow at Harvard University, Visiting Assistant Professor of Economics at Dartmouth College and Adjunct Professor of Global Health at the Harvard T.H. Chan School of Public Health. He has worked as a consultant for the World Bank, UNICEF, UNDP, UNESCO, FAO and several other organizations.
+            </p>
           </div>
         </div>
-        <div class="hover:scale-105 max-w-sm bg-white hover:bg-gray-100 rounded-lg border border-gray-200 shadow-xl mx-4">
-            <img class="rounded-t-lg" src="img/Achir Yani Syuhaimie.png" alt="">
-          <div class="p-5">
-            <h5 class=" text-2xl font-bold tracking-tight text-gray-900">Prof. Achir Yani Syuhaimie, M.N.D. N.Sc</h5>
-            <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">Professor for Nursing Disaster at University
-              of Indonesia, Jakarta</h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-              acquisitions
-              of 2021 so far, in reverse chronological order.</p>
-    
+
+        <div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-4xl mx-4 md:mx-0">
+          <img class="object-cover w-full rounded-t-lg h-full  md:w-48 md:rounded-none md:rounded-l-lg" src="img/heri-kuswanto.png" alt="">
+          <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class=" text-2xl md:text-3xl font-bold tracking-tight text-gray-900">Prof. Dr.rer.pol Heri Kuswanto, M.Si</h5>
+              <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">Institute Teknologi Sepuluh November, Indonesia</h5>
+              <h5 class="mb-2 text-lg font-light tracking-tight text-gray-900">"Leveraging Satellite Imagery for Statistical Prediction : Case Studies on Official Statistics"</h5>
+              <div class="p-0.5 bg-gradient-to-br from-sky-500 to-indigo-500"></div>
+              <p class="mb-3 font-normal text-gray-700 text-justify">
+                Upon completing his doctoral degree at Leibniz Hannover University, Germany, Mr. Heri Kuswanto did his post-doctoral on Calibration of ensemble weather forecast at Laval University, Canada. Since then, most of his works are dealing with extreme climate modeling and prediction. Mr. Kuswanto  also does many activities i.e. Secretary General of Indonesia Young Science Academy, Research affiliate at Harvard University and get many awards such as; Harvard Residency Program, Research Ambassador of DAAD Jakarta, Elected member of Indonesian Young Science Academy, and Listed as 15 Best Lecturers (Academic Staff) in Indonesia by Ministry of Higher Education.
+              </p>
           </div>
         </div>
+
+        <div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-4xl mx-4 md:mx-0">
+          <img class="object-cover w-full rounded-t-lg h-full  md:w-48 md:rounded-none md:rounded-l-lg" src="img/don-mcneil-new.png" alt="">
+          <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class=" text-2xl md:text-3xl font-bold tracking-tight text-gray-900">Prof. Dr. Don McNeil</h5>
+              <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">Prince of Songkla University, Thailand</h5>
+              <h5 class="mb-2 text-lg font-light tracking-tight text-gray-900 ">"Using Spline Functions to Analyse Survival Data"</h5>
+              <div class="p-0.5 bg-gradient-to-br from-sky-500 to-indigo-500"></div>
+              <p class="mb-3 font-normal text-gray-700 text-justify">
+                After spending six years as Associate Professor in the Statistics Department at Princeton University, 
+              I was appointed as foundation Professor of Statistics in the School of Economic & Financial Studies at Macquarie University in 1976, and was invited to address its graduates in 1998 before retiring in 2001 and helping to run a graduate program at Prince of Songkla University in Thailand (see my piece in the book "Who Says I Am Retired" published in 2018 by the Social Security Research Centre at the University of Malaya, where one of my former PhD students Halimah Awang works).
+            </p>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
 
 </div>
+
+
 
 <div class="mb-28" >
   <div class=" md:mt-44 h-52 flex items-center justify-center" id="fade">
@@ -155,52 +263,96 @@
 
   <div class="container flex items-center justify-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-9 ">
-      <div class="hover:scale-105 max-w-sm bg-white hover:bg-gray-100 rounded-lg border border-gray-200 shadow-xl mx-4">
+
+      <div class=" max-w-sm bg-white rounded-lg border border-gray-200 shadow-xl mx-4">
         <img class="rounded-t-lg " src="img/" alt="">
         <div class="p-5">
-          <h5 class=" text-2xl font-bold tracking-tight text-gray-900">Germany alumni</h5>
+          <h5 class=" text-2xl font-bold tracking-tight text-gray-900">Germany Alumni</h5>
           <h5 class="mb-2 text-xl font-normal tracking-tight text-gray-900 ">The German Academic Exchange Service (DAAD)
           </h5>
         </div>
-
       </div>
-      <div class="hover:scale-105 max-w-sm bg-white hover:bg-gray-100 rounded-lg border border-gray-200 shadow-xl mx-4">
+
+      <div class=" max-w-sm bg-white  rounded-lg border border-gray-200 shadow-xl mx-4">
         <img class="rounded-t-lg" src="img" alt="">
         <div class="p-5">
           <h5 class=" text-2xl font-bold tracking-tight text-gray-900">Scholars, academicians, lecturers and researchers</h5>
-
         </div>
       </div>
+
 
     </div>
   </div>
 
 </div>
 
-
+</div>
 
 <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-  <div>
-    <a title="Syiah Kuala University" href="https://usk.ac.id/" target="_blank"
-      class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-      <img class="object-cover object-center  md:w-full md:h-full rounded-full"
-        src="img/usk.png" />
+  <div class="">
+    <a title="Email ICMSA 2023 Team" href="mailto:icmsa@usk.ac.id" target="_blank"
+      class=" content-center block w-10 h-10 md:w-14 md:h-14 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+      <img class="object-cover object-center  w-full h-full rounded-full" src="https://img.icons8.com/fluency/48/null/circled-envelope.png"/> 
     </a>
   </div>
 </div>
 
-
-
-</div>
 <!-- Footer -->
-<footer class="p-3 bg-white sm:p-4 ">
-  <div class="  items-center sm:justify-between">
-    <p class="text-sm text-gray-700 text-center">© 2022 <a href="#"
-        class="hover:underline">The 18th IMT-GT ICMSA</a>. All Rights Reserved. <br>
-    <span> Developed by Syiah Kuala University.</span> </p>
+<footer class="p-4 bg-gray-800 sm:p-6">
+  <div class="md:flex md:justify-between md:mx-24">
+    <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Organizer:</h2>
+      <a target="_blank" href="https://usk.ac.id/" class="flex items-center">
+        <img src="img/icon/logo_usk_baru.png" class="mr-3 h-20 mb-3 drop-shadow-md" alt="USK Logo">
+      </a>
+      <a target="_blank" href="http://stat.unsyiah.ac.id/newsite/" class="flex items-center">
+        <img src="img/icon/logo-js-footer-300x92.png" class="mr-3 h-20 drop-shadow-md" alt="Statistics USK Logo">
+      </a>
+    </div>
+    <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Co-Organizer:</h2>
+      <a target="_blank" href="https://www.isi-web.org/" class="flex items-center">
+        <img src="img/icon/isi_logo.png" class="mr-3 h-24 drop-shadow-md" alt="ISI Logo">
+      </a>
+      <a target="_blank" href="https://imtgt.org/" class="flex items-center">
+        <img src="img/imt-gt.png" class="mr-3 h-24 drop-shadow-md" alt="IMT-GT Logo">
+      </a>
+    </div>
+    <!-- <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Technical Sponsor:</h2>
+      <a target="_blank" href="https://www.ieee.org/" class="flex items-center">
+        <img src="img/icon/IEEE_logo.png" class="mr-3 h-24 drop-shadow-md" alt="IEEE Logo">
+      </a>
+    </div> -->
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Contact Us</h2>
+      <p class="text-gray-500 ">
+        Universitas Syiah Kuala <br>
+        Jl. Teuku Nyak Arief No.441,<br>
+        Kopelma Darussalam, Syiah Kuala <br>
+        Banda Aceh, Indonesia 23111 <br>
+      </p>
+    </div>
+
+    <div>
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Visitor</h2>
+      <div href="https://info.flagcounter.com/izBE"><img
+          src="https://s11.flagcounter.com/count2/izBE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+          alt="Flag Counter" border="0"></div>
+    </div>
 
   </div>
-</footer>  
+  <hr class="my-6 border-gray-500 sm:mx-auto lg:my-8">
+  <div class=" items-center text-gray-100 font-light">
+    <p class="text-sm  text-center ">©2023 The 18th IMT-GT ICMSA. All Rights Reserved.</p>
+    <p class="text-sm  text-center ">Developed by Statistics Department, Universitas Syiah Kuala</p>
+  </div>
+</footer>
 <!-- End of Footer -->
 
 

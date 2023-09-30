@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" type="icon" href="img/icon/usk-icon.png" />
+
+  <!-- css link -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style2.css">
+
+  <!-- flowbite js -->
+  <!-- <script src="../node_modules/flowbite/src/flowbite.js"></script> -->
+  <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/scroll.js"></script>
+
+  <!-- navbar js -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+  <title>Paper Template</title>
+  <meta name="description"
+    content="The 18th IMT-GT International Conference on Mathematics, Statistics and Their Applications (ICMSA2023) is initiated by IMT-GT (Indonesia-Malaysia-Thailand Growth Triangle) consortium to promote mathematics and statistics in the region. The purpose of the conference is to bring together mathematicians, statisticians, academics and students from the region of Indonesia, Malaysia, and Thailand, as well as any other regions around the world, to share knowledge, expertise, and the recent development of mathematics and statistics in the form of plenary presentations and related social events." />
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <meta http-equiv="Pragma" CONTENT="no-cache">
+  <meta http-equiv=expires content=0>
+  <meta http-equiv="Keywords"
+    content="Conference, ICMSA2023, ICMSA 2023, ICMSA, icmsa, icmsa2023, icmsa 2023, icmsa usk, 18th IMT-GT, Conference on Mathematics, Statistics, Syiah Kuala University, Universitas Syiah Kuala">
+  <meta name="Author" content="ICMSA2023">
+  <meta name="Title"
+    content="ICMSA 2023 - The 18th IMT-GT International Conference on Mathematics, Statistics and their Applications">
+  <meta name="Copyright" content="2023" />
+  <meta name="Robots" content="all">
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRJCNQ7JBQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRJCNQ7JBQ');
+</script>
+
+<body class="bg-white">
+
+
+<!-- Navbar Here -->
+<div class=" w-full text-gray-700 bg-white z-40 fixed top-0 shadow-lg py-1  ">
+  <div x-data="{ open: false }"
+    class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="p-4 flex flex-row items-center justify-between">
+      <a href="index"
+        class=" text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA
+        2023</a>
+      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="index">Home</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700   md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="speaker">Speaker</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold  text-gray-700   md:mt-0 hover:text-sky-600  link link-underline link-underline-black"
+        href="callforpaper">Call for Papers</a>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'For Authors' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-sky-600  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="program">Program Schedule</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="info-program">Information Program</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                      href="fee-venue">Registration Fee</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="guidelines">Paper Submission Guidelines</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="paper-template">Paper Template</a>
+                  <!-- <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="ieee-pdf">IEEE PDF eXpress Guidelines</a> -->
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600" target="_blank"
+                    href="https://edas.info/doc/authors.html">EDAS Submission Guidelines</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="flyer">2023 ICMSA Flyer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'Committees' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                  href="advisory-board">Advisory Board</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="technical-program">Technical Program Committee</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="organizing-committee">Organizing Committee</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+          <span>Others</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="https://imtgt.org/about-imt-gt/" target="_blank">About IMT-GT</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="previous">Previous Conferences</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 "
+              href="contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- End of Navbar -->
+
+    <!-- Header -->
+    <div class="mt-16">
+
+
+    <div class="min-w-screen mb-52 mt-10 items-center justify-center md:mx-44 px-5 py-5">
+        <div class="">
+    
+        <h1 class=" mt-20 mb-5 p-1 font-bold text-3xl md:text-4xl text-left text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 ">
+            Paper Template
+        </h1>
+        <hr>
+        <p class=" text-gray-700 text-base my-2"> In order to minimize the error during submitting your manuscript to EDAS system. We only accept the paper template for your manuscript in A4 format.
+        </p>
+        <hr>
+          <!-- <div class=" mt-5 text-gray-700">
+            <h3 class="font-bold">Please download the following paper template for your manuscript.</h3>
+            <ul class="ml-7 list-decimal">
+              <li><a class="hover:underline text-blue-700" href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/conference-template-a4.docx">Microsoft Word template (A4)</a></li>
+              <li><a class="hover:underline text-blue-700" href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/conference-latex-template_10-17-19.zip">Latex template (A4)</a> and <a class="hover:underline text-blue-700" href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/IEEEtranBST2.zip">Latex bibliography</a></li>
+              <li><a class="hover:underline text-blue-700" href="https://www.overleaf.com/gallery/tagged/ieee-official">Overleaf template.</a></li>
+              </ul>
+          </div> -->
+
+          <div class=" mt-5 text-gray-700">
+            <h3 class="font-bold">You can follow the following configuration for your paper template margin</h3>
+            <ul class="ml-7 list-decimal">
+              <li>Minimum left and right margins: 1.57 cm</li>
+              <li>Minimum top margin for first page: 0.95 cm</li>
+              <li>Minimum top margin for other pages: 1.9 cm</li>
+              <li>Minimum bottom margin: 2.54 cm</li>
+              </ul>
+          </div>
+  
+          <div class=" mt-5 md:mt-7 text-gray-800">
+            <img src="img/margin-information.png" alt="margin-information">
+          </div>
+  
+          
+  
+        </div>
+      </div>
+      
+
+  </div>
+
+  <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+    <div class="">
+      <a title="Email ICMSA 2023 Team" href="mailto:icmsa@usk.ac.id" target="_blank"
+        class=" content-center block w-10 h-10 md:w-14 md:h-14 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+        <img class="object-cover object-center  w-full h-full rounded-full" src="https://img.icons8.com/fluency/48/null/circled-envelope.png"/> 
+      </a>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="p-4 bg-gray-800 sm:p-6">
+    <div class="md:flex md:justify-between md:mx-24">
+      <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Organizer:</h2>
+        <a target="_blank" href="https://usk.ac.id/" class="flex items-center">
+          <img src="img/icon/logo_usk_baru.png" class="mr-3 h-20 mb-3 drop-shadow-md" alt="USK Logo">
+        </a>
+        <a target="_blank" href="http://stat.unsyiah.ac.id/newsite/" class="flex items-center">
+          <img src="img/icon/logo-js-footer-300x92.png" class="mr-3 h-20 drop-shadow-md" alt="Statistics USK Logo">
+        </a>
+      </div>
+      <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Co-Organizer:</h2>
+        <a target="_blank" href="https://www.isi-web.org/" class="flex items-center">
+          <img src="img/icon/isi_logo.png" class="mr-3 h-24 drop-shadow-md" alt="ISI Logo">
+        </a>
+        <a target="_blank" href="https://imtgt.org/" class="flex items-center">
+          <img src="img/imt-gt.png" class="mr-3 h-24 drop-shadow-md" alt="IMT-GT Logo">
+        </a>
+      </div>
+      <!-- <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Technical Sponsor:</h2>
+        <a target="_blank" href="https://www.ieee.org/" class="flex items-center">
+          <img src="img/icon/IEEE_logo.png" class="mr-3 h-24 drop-shadow-md" alt="IEEE Logo">
+        </a>
+      </div> -->
+  
+      <div></div>
+      <div></div>
+      <div></div>
+  
+      <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Contact Us</h2>
+        <p class="text-gray-500 ">
+          Universitas Syiah Kuala <br>
+          Jl. Teuku Nyak Arief No.441,<br>
+          Kopelma Darussalam, Syiah Kuala <br>
+          Banda Aceh, Indonesia 23111 <br>
+        </p>
+      </div>
+  
+      <div>
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Visitor</h2>
+        <div href="https://info.flagcounter.com/izBE"><img
+            src="https://s11.flagcounter.com/count2/izBE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+            alt="Flag Counter" border="0"></div>
+      </div>
+    </div>
+    <hr class="my-6 border-gray-500 sm:mx-auto lg:my-8">
+    <div class=" items-center text-gray-100 font-light">
+      <p class="text-sm  text-center ">©2023 The 18th IMT-GT ICMSA. All Rights Reserved.</p>
+      <p class="text-sm  text-center ">Developed by Statistics Department, Universitas Syiah Kuala</p>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+
+</body>
+
+</html>

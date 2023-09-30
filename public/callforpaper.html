@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" type="icon" href="img/icon/usk-icon.png" />
 
   <!-- css link -->
   <link rel="stylesheet" href="./css/style.css">
@@ -20,132 +22,453 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-  <title>ICMSA 2022</title>
+  <title>Call For Paper</title>
+  <meta name="description"
+    content="The 18th IMT-GT International Conference on Mathematics, Statistics and Their Applications (ICMSA2023) is initiated by IMT-GT (Indonesia-Malaysia-Thailand Growth Triangle) consortium to promote mathematics and statistics in the region. The purpose of the conference is to bring together mathematicians, statisticians, academics and students from the region of Indonesia, Malaysia, and Thailand, as well as any other regions around the world, to share knowledge, expertise, and the recent development of mathematics and statistics in the form of plenary presentations and related social events." />
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <meta http-equiv="Pragma" CONTENT="no-cache">
+  <meta http-equiv=expires content=0>
+  <meta http-equiv="Keywords"
+    content="Conference, ICMSA2023, ICMSA 2023, ICMSA, icmsa, icmsa2023, icmsa 2023, icmsa usk, 18th IMT-GT, Conference on Mathematics, Statistics, Syiah Kuala University, Universitas Syiah Kuala">
+  <meta name="Author" content="ICMSA2023">
+  <meta name="Title"
+    content="ICMSA 2023 - The 18th IMT-GT International Conference on Mathematics, Statistics and their Applications">
+  <meta name="Copyright" content="2023" />
+  <meta name="Robots" content="all">
 </head>
 
-<body class="">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRJCNQ7JBQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRJCNQ7JBQ');
+</script>
+
+<body class=" bg-white">
 
 
   <!-- Navbar Here -->
-  <div class=" w-full text-gray-700 bg-white z-50 fixed top-0 shadow-lg py-1 ">
-    <div x-data="{ open: false }"
-      class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-      <div class="p-4 flex flex-row items-center justify-between">
-        <a href="index.html"
-          class="text-2xl font-bold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA
-          2022</a>
-        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-            <path x-show="!open" fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-              clip-rule="evenodd"></path>
-            <path x-show="open" fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-      </div>
-      <nav :class="{'flex': open, 'hidden': !open}"
-        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-        <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-          href="speaker.html">Speaker</a>
-        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-          href="callforpaper.html">Call for Papers</a>
-        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-          href="guidelines.html">Guidelines</a>
-        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-          href="contact.html">Contact</a>
-        <div @click.away="open = false" class="relative" x-data="{ open: false }">
-          <button @click="open = !open"
-            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:hover:bg-sky-300 focus:outline-none focus:shadow-outline">
-            <span>More</span>
-            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
-              class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+<div class=" w-full text-gray-700 bg-white z-40 fixed top-0 shadow-lg py-1  ">
+  <div x-data="{ open: false }"
+    class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="p-4 flex flex-row items-center justify-between">
+      <a href="index"
+        class=" text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA
+        2023</a>
+      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="index">Home</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700   md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="speaker">Speaker</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold  text-sky-600  md:mt-0 hover:text-sky-600  link link-underline link-underline-black"
+        href="callforpaper">Call for Papers</a>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'For Authors' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
               <path fill-rule="evenodd"
                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                 clip-rule="evenodd"></path>
             </svg>
           </button>
-          <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
             x-transition:enter-start="transform opacity-0 scale-95"
             x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="transform opacity-100 scale-100"
-            x-transition:leave-end="transform opacity-0 scale-95"
-            class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-            <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-              <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300focus:outline-none focus:shadow-outline"
-                href="#">About IMT-GT</a>
-              <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-                href="#">Previous Conferences</a>
-              <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg   md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-                href="#">Zoom Background</a>
-              <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-sky-300 focus:bg-sky-300 focus:outline-none focus:shadow-outline"
-                href="#">Committee</a>
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="program">Program Schedule</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="info-program">Information Program</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                      href="fee-venue">Registration Fee</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="guidelines">Paper Submission Guidelines</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="paper-template">Paper Template</a>
+                  <!-- <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="ieee-pdf">IEEE PDF eXpress Guidelines</a> -->
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600" target="_blank"
+                    href="https://edas.info/doc/authors.html">EDAS Submission Guidelines</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="flyer">2023 ICMSA Flyer</a>
+              </div>
             </div>
           </div>
         </div>
-  
-      </nav>
-    </div>
+      </div>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'Committees' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                  href="advisory-board">Advisory Board</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="technical-program">Technical Program Committee</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="organizing-committee">Organizing Committee</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+          <span>Others</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="https://imtgt.org/about-imt-gt/" target="_blank">About IMT-GT</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="previous">Previous Conferences</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 "
+              href="contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
+</div>
   <!-- End of Navbar -->
 
   <!-- Header -->
   <div class="mt-16">
 
-<div class="my-56">
-<div class=" flex flex-wrap items-center justify-center" >
-  <div class="mx-4 text-center text-gray-800">
-    <h1 class=" font-bold text-3xl md:text-3xl lg:text-4xl text-center md:text-left mt-10">General Theme and Topics
-    </h1>
-    <p class=" mt-4 text-base text-center md:text-left"> The 18th IMT-GT
-      The conference will be held with the theme:
-    </p>
-    <h1 class=" my-2 font-bold text-xl md:text-2xl lg:text-2xl  text-left">"Advancing Data Science in Accelerating
-      Achievement of SDGs”
-    </h1>
-    <p class=" text-base text-left"> The 18th IMT-GT
-      In relation to the theme, the conference will have the following topics of interest (but are not limited to):
-      <span><img src="https://img.icons8.com/fluency/16/000000/circled.png" /></span>Mathematical Modelling
-      <br> Analysis (Mathematical Analysis, Numerical Analysis, Functional Analysis, etc)
-      <br> Operation
-      <br> research and optimization
-      <br> Mathematical Simulations
-      <br> Finance
-      <br> Statistical Modelling & Analysis
-      <br> Time Series Analysis and Forecasting
-      <br> Data Asience and Data Mining
-      <span><img src="https://img.icons8.com/fluency/16/000000/circled.png" /></span>And other related applications
-    </p>
-  </div>
-</div>
-</div>
+    <div class="min-w-screen mb-52 mt-10 items-center justify-center md:mx-44 px-5 py-5 text-gray-700">
+      <div class="">
+        <p
+            class="mt-20 p-1 font-bold drop-shadow-xl text-4xl md:text-4xl lg:text-6xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+            Call For Paper
+          </p>
+          <div class="p-0.5 w-28 md:w-56 bg-gradient-to-br from-sky-500 to-indigo-500"></div>
 
+        <div class=" text-gray-700 mt-3">
+          <div class="my-3">
+            <p class="font-bold text-xl my-1 ">
+              THE 18TH IMT-GT INTERNATIONAL CONFFERENCES ON MATHEMATICS, STATISTICS AND THEIR APPLICATIONS (ICMSA) 2023
+              </p>
+            <p class="font-semibold text-xl my-1">
+              Banda Aceh, Indonesia, April 10-11, 2023</p>
+            <p class="font-semibold text-lg my-1 text-blue-700">
+                Full Paper Submission Deadline: March 07, 2023 <br>
+                Camera Ready: April 07, 2023
+            </p>
+          </div>
+          <div class="my-3 font-semibold text-justify text-lg">
+            <p class="">
+              It is our great pleasure to welcome you to the 18th IMT_GT International Conference on Mathematics, Statistics and Their Applications (ICMSA) 2023. The conference will be held on April 10-11, 2023, in Banda Aceh, Indonesia. The 18th IMT-GT ICMSA 2022 is hosted and organized by Department of Statistics, Universitas Syiah Kuala (USK). This conference is also co-organized by the Forum Pendidikan Tingi Statistika (FORSTAT).
+            </p>
+            <p class="mt-4">
+              Under the theme "Advancing Data Science in Accelerating Achievement of SDGs", the conference will provide an excellent forum for knowledge sharing and research findings related to data science and artificial intelligence research and innovations for the latest technology development to enrich intelligent societies.
+            </p>
+            <p class="mt-4">
+              Topics of interest include, but are not limited to:
+            </p>
+          </div>
 
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="bg-slate-200 p-3">
+              <h3 class="font-bold text-lg mb-2">Track 1: Data Science</h3>
+              <ul class="ml-7 list-disc">
+                <li>Data Mining</li>
+                <li>Simulation</li>
+                <li>Data clustering and classifications</li>
+                <li>Statistical model in data science</li>
+                <li>Machine learning in data science</li>
+                <li>Data visualization</li>
+                <li>Data intelligence</li>
+                <li>Business intelligence and data warehousing</li>
+                <li>Cloud computing for Big Data</li>
+                <li>Data processing and analytics in IoT</li>
+                <li>Tools and applications in data science</li>
+                <li>Vision and future directions of data science</li>
+                <li>Cyber Security on data science</li>
+            </div>
+            <div class="bg-slate-200 p-3">
+              <h3 class="font-bold text-lg mb-2">Track 2: Artificial Intelligence</h3>
+              <ul class="ml-7 list-disc">
+                <li>Communication, Networking & Broadcasting</li>
+                <li>Signal Processing & Analysis</li>
+                <li>Machine Learning</li>
+                <li>Soft Computing</li>
+                <li>Evolutionary Computing</li>
+                <li>Fuzzy Systems</li>
+                <li>Cognitive Systems</li>
+                <li>Deep Learning</li>
+                <li>Ambient Intelligence</li>
+                <li>Bayesian Networks</li>
+                <li>Case-Based Reasoning</li>
+                <li>Explainable Artificial Intelligence</li>
+                <li>Hybrid Intelligent Systems</li>
+                <li>Industrial Applications of AI</li>
+                <li>Intelligent User Interfaces</li>
+                <li>Knowledge Representation and Reasoning</li>
+                <li>Knowledge-Based Systems</li>
+                <li>Model-Based Reasoning</li>
+                <li>Neural Networks</li>
+                <li>Ontologies</li>
+                <li>Planning and Scheduling</li>
+                <li>Quantum Artificial Intelligence</li>
+                <li>Social Network Analysis</li>
+            </div>
+            <div class="bg-slate-200 p-3">
+              <h3 class="font-bold text-lg mb-2">Track 3 : Information Science</h3>
+              <ul class="ml-7 list-disc">
+                <li>Components, Circuits, Devices & Systems</li>
+                <li>Computing & Processing (Hardware/Software)</li>
+                <li>Cryptography and steganography</li>
+                <li>Digital Forensic</li>
+                <li>Social media and social network</li>
+                <li>Crowdsourcing</li>
+                <li>Collective intelligence</li>
+                <li>Network science</li>
+                <li>Information architecture</li>
+            </div>
+            <div class="bg-slate-200 p-3">
+              <h3 class="font-bold text-lg mb-2">Track 4 : Computational and Applied Statistics</h3>
+              <ul class="ml-7 list-disc">
+                <li>Aerospace</li>
+                <li>Bioengineering</li>
+                <li>Engineered Materials, Dielectrics & Plasmas</li>
+                <li>Engineering Profession</li>
+                <li>Fields, Waves & Electromagnetics</li>
+                <li>Geoscience</li>
+                <li>Nuclear Engineering</li>
+                <li>Photonics & Electro-Optics</li>
+                <li>Power, Energy, & Industry Applications</li>
+                <li>Robotics & Control Systems</li>
+                <li>Transportation</li>
+            </div>
+          </div>
 
+          <!-- <div class="mt-10">
+            <p
+            class=" p-1 font-bold drop-shadow-xl text-3xl md:text-4xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+            Paper Submission
+            </p>
+            <p class="text-justify mt-3 ">
+              Papers should contain original material which is not currently under review in any other conference or journal and has not been previously published. All submissions should be written in English with a maximum paper length of six printed pages in standard IEEE conference two-column format, including figures. All submitted papers will go through a peer-review process. Questions about paper submissions or the conference program can be addressed to any Publication Chairs.
+            </p>
+            <p class="text-justify mt-3 ">
+              The standard IEEE Transactions templates for Microsoft Word or LaTeX formats can be found at: <a class="hover:underline text-blue-700" href="http://www.ieee.org/conferences_events/conferences/publishing/templates.html">http://www.ieee.org/conferences_events/conferences/publishing/templates.html.</a> Only PDF files will be accepted for the review process, and all submissions must be made through EDAS online submission system: <a class="hover:underline text-blue-700" href="https://edas.info/N30490">https://edas.info/N30490</a>.
+            </p>
+              <div class="grid grid-cols-2 gap-5">
+                <div class="bg-gradient-to-br from-sky-500 to-indigo-500 p-7 text-white">
+                  <h3 class="font-bold text-2xl">Submit Now</h3>
+                  <p class="font-bold mt-2">EDAS</p>
+                  <p class="mb-2">Online Submission System</p>
+                  <a href="https://edas.info/N30490" target="_blank" type="button" class="text-blue-700 bg-white hover:bg-gray-200 focus:ring-4 focus:ring-blue-300 font-medium  text-sm px-9 py-2.5 mr-2 mb-2  focus:outline-none">Submit</a>
 
+                </div>
+                </div>
+              </div> -->
+          </div>
 
-    <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-      <div>
-        <a title="Syiah Kuala University" href="https://usk.ac.id/" target="_blank"
-          class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-          <img class="object-cover object-center  md:w-full md:h-full rounded-full" src="img/usk.png" />
-        </a>
+          <!-- <div class="mt-10">
+            <p
+            class=" p-1 font-bold drop-shadow-xl text-3xl md:text-4xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+            IEEE PDF eXpress
+            </p>
+            <p class="text-justify mt-3 ">
+              IEEE PDF eXpress is a free service to IEEE conferences, allowing the authors to make IEEE Xplore-compatible PDFs (Conversion function) or check PDFs that authors have made for IEEE Xplore compatibility (PDF Check function). The IEEE PDF eXpress will be available to ICMSA 2023 authors from <span class="font-semibold"> March 25 to April 3, 2023.</span> Submit final IEEE Xplore-compatible PDF(s) to the <span class="underline font-semibold">Conference Record ID: 57451.</span> <span class="text-red-700 font-semibold">The final manuscript (camera-ready) deadline is April 3, 2023.</span> The complete information can be found in this link: (<a class="hover:underline text-blue-700" href="ieee-pdf">Click Here</a>)</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class=" p-3">
+                  <h3 class=" ">Selected paper expected publish in:</h3>
+                  <img src="img/ieeexplore_logo.jpeg" alt="">
+                </div>
+                <div class="p-3">
+                  <h3 class=" ">Learn more about…</h3>
+                  <a href="https://ieeeauthorcenter.ieee.org/"><img src="img/ieee-author-center-logo.png" alt=""></a>
+                </div>
+              </div>
+          </div> -->
+
+          <!-- <div class="mt-10">
+            <p
+            class=" p-1 font-bold drop-shadow-xl text-3xl md:text-4xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+            Non-presented Paper Policy
+            </p>
+            <p class="text-justify mt-3 ">
+              The committee and IEEE reserves the right to exclude a paper from distribution after the conference, including IEEE Xplore® Digital Library, if the paper is <span class="font-bold">not presented</span> by the author at the conference.
+            </p>
+          </div> -->
+
+          <!-- <div class="mt-10">
+            <p
+            class=" p-1 font-bold drop-shadow-xl text-3xl md:text-4xl lg:text-5xl  text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500">
+            Publication and Indexing
+            </p>
+            <p class="text-justify mt-3">
+              The 18th ICMSA 2023 has been approved by IEEE for Technical co-sponsorship with the conference record number #57451. Prospective authors are invited to submit original technical papers for presentation at the conference. At least one author of each accepted paper must register for the conference to be included in the program. <span class="font-semibold">All presented papers are expected to be included in IEEE Xplore Digital Library.</span>
+            </p>
+            <h3 class="font-bold mt-2">IEEE XPLORE - Catalog Part Number:</h3>
+            <div class="relative overflow-x-auto">
+              <table class="auto w-full text-gray-500 text-left text-sm ">
+                <thead class="text-xs  text-gray-700  bg-gray-200">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 text-base">
+                      Media Type Requested
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-base">
+                      Part Number
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-base">
+                      ISBN
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b  ">
+                    <td scope="" class="px-6 py-4">
+                      XPLORE COMPLIANT
+                    </td>
+                    <td class="px-6 py-4">
+                      CFP23H58-ART
+                    </td>
+                    <td class="px-6 py-4">
+                      979-8-3503-2220-0
+                    </td>
+                  </tr>
+  
+                  <tr class="border-b  ">
+                    <td scope="" class="px-6 py-4">
+                      PRINT
+                    </td>
+                    <td class="px-6 py-4">
+                      CFP23H58-PRT
+                    </td>
+                    <td class="px-6 py-4">
+                      979-8-3503-2219-4
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div> -->
       </div>
     </div>
 
 
+  </div>
+</div>
 
   </div>
-  <!-- Footer -->
-  <footer class="p-3 bg-white sm:p-4 ">
-    <div class="  items-center sm:justify-between">
-      <p class="text-sm text-gray-700 text-center">© 2022 <a href="#" class="hover:underline">The 18th IMT-GT ICMSA</a>.
-        All Rights Reserved. <br>
-        <span> Developed by Syiah Kuala University.</span>
-      </p>
 
+  <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+    <div class="">
+      <a title="Email ICMSA 2023 Team" href="mailto:icmsa@usk.ac.id" target="_blank"
+        class=" content-center block w-10 h-10 md:w-14 md:h-14 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+        <img class="object-cover object-center  w-full h-full rounded-full" src="https://img.icons8.com/fluency/48/null/circled-envelope.png"/> 
+      </a>
     </div>
+  </div>
+  <!-- Footer -->
+  <footer class="p-4 bg-gray-800 sm:p-6">
+    <div class="md:flex md:justify-between md:mx-24">
+      <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Organizer:</h2>
+        <a target="_blank" href="https://usk.ac.id/" class="flex items-center">
+          <img src="img/icon/logo_usk_baru.png" class="mr-3 h-20 mb-3 drop-shadow-md" alt="USK Logo">
+        </a>
+        <a target="_blank" href="http://stat.unsyiah.ac.id/newsite/" class="flex items-center">
+          <img src="img/icon/logo-js-footer-300x92.png" class="mr-3 h-20 drop-shadow-md" alt="Statistics USK Logo">
+        </a>
+      </div>
+      <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Co-Organizer:</h2>
+        <a target="_blank" href="https://www.isi-web.org/" class="flex items-center">
+          <img src="img/icon/isi_logo.png" class="mr-3 h-24 drop-shadow-md" alt="ISI Logo">
+        </a>
+        <a target="_blank" href="https://imtgt.org/" class="flex items-center">
+          <img src="img/imt-gt.png" class="mr-3 h-24 drop-shadow-md" alt="IMT-GT Logo">
+        </a>
+      </div>
+      <!-- <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Technical Sponsor:</h2>
+        <a target="_blank" href="https://www.ieee.org/" class="flex items-center">
+          <img src="img/icon/IEEE_logo.png" class="mr-3 h-24 drop-shadow-md" alt="IEEE Logo">
+        </a>
+      </div> -->
+  
+      <div></div>
+      <div></div>
+      <div></div>
+  
+      <div class="mb-6 md:mb-0">
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Contact Us</h2>
+        <p class="text-gray-500 ">
+          Universitas Syiah Kuala <br>
+          Jl. Teuku Nyak Arief No.441,<br>
+          Kopelma Darussalam, Syiah Kuala <br>
+          Banda Aceh, Indonesia 23111 <br>
+        </p>
+      </div>
+  
+      <div>
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Visitor</h2>
+        <div href="https://info.flagcounter.com/izBE"><img
+            src="https://s11.flagcounter.com/count2/izBE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+            alt="Flag Counter" border="0"></div>
+      </div>
+  
+    </div>
+    <hr class="my-6 border-gray-500 sm:mx-auto lg:my-8">
+    <div class=" items-center text-gray-100 font-light">
+      <p class="text-sm  text-center ">©2023 The 18th IMT-GT ICMSA. All Rights Reserved.</p>
+      <p class="text-sm  text-center ">Developed by Statistics Department, Universitas Syiah Kuala</p>
+    </div>
+  </footer>
   </footer>
   <!-- End of Footer -->
 

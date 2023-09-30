@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="shortcut icon" type="icon" href="img/icon/usk-icon.png" />
+
+  <!-- css link -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style2.css">
+
+  <!-- flowbite js -->
+  <!-- <script src="../node_modules/flowbite/src/flowbite.js"></script> -->
+  <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/scroll.js"></script>
+
+  <!-- navbar js -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+  <title>Program Schedule</title>
+  <meta name="description"
+    content="The 18th IMT-GT International Conference on Mathematics, Statistics and Their Applications (ICMSA2023) is initiated by IMT-GT (Indonesia-Malaysia-Thailand Growth Triangle) consortium to promote mathematics and statistics in the region. The purpose of the conference is to bring together mathematicians, statisticians, academics and students from the region of Indonesia, Malaysia, and Thailand, as well as any other regions around the world, to share knowledge, expertise, and the recent development of mathematics and statistics in the form of plenary presentations and related social events." />
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <meta http-equiv="Pragma" CONTENT="no-cache">
+  <meta http-equiv=expires content=0>
+  <meta http-equiv="Keywords"
+    content="Conference, ICMSA2023, ICMSA 2023, ICMSA, icmsa, icmsa2023, icmsa 2023, icmsa usk, 18th IMT-GT, Conference on Mathematics, Statistics, Syiah Kuala University, Universitas Syiah Kuala">
+  <meta name="Author" content="ICMSA2023">
+  <meta name="Title"
+    content="ICMSA 2023 - The 18th IMT-GT International Conference on Mathematics, Statistics and their Applications">
+  <meta name="Copyright" content="2023" />
+  <meta name="Robots" content="all">
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RRJCNQ7JBQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRJCNQ7JBQ');
+</script>
+
+<body class="bg-white">
+
+
+  <!-- Navbar Here -->
+<div class=" w-full text-gray-700 bg-white z-40 fixed top-0 shadow-lg py-1  ">
+  <div x-data="{ open: false }"
+    class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div class="p-4 flex flex-row items-center justify-between">
+      <a href="index"
+        class=" text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 uppercase rounded-lg focus:outline-none focus:shadow-outline">ICMSA
+        2023</a>
+      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="index">Home</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700   md:mt-0 hover:text-sky-600  link link-underline link-underline-black "
+        href="speaker">Speaker</a>
+      <a class="px-4 py-2 mt-2 text-sm font-semibold  text-gray-700   md:mt-0 hover:text-sky-600  link link-underline link-underline-black"
+        href="callforpaper">Call for Papers</a>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'For Authors' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-sky-600  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="program">Program Schedule</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="info-program">Information Program</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                      href="fee-venue">Registration Fee</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="guidelines">Paper Submission Guidelines</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="paper-template">Paper Template</a>
+                  <!-- <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                    href="ieee-pdf">IEEE PDF eXpress Guidelines</a> -->
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600" target="_blank"
+                    href="https://edas.info/doc/authors.html">EDAS Submission Guidelines</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                    href="flyer">2023 ICMSA Flyer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'Committees' }">
+          <button @click="openSort = !openSort"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+            <span x-text="sortType"></span>
+            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}"
+              class="w-4 h-4  transition-transform duration-200 transform ">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div x-show="openSort" x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 w-full  origin-top-right">
+            <div class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="flex flex-col px-2 py-2 bg-white rounded-md shadow ">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600"
+                  href="advisory-board">Advisory Board</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="technical-program">Technical Program Committee</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+                  href="organizing-committee">Organizing Committee</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button @click="open = !open"
+          class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 active:text-sky-600  link link-underline link-underline-black">
+          <span>Others</span>
+          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="https://imtgt.org/about-imt-gt/" target="_blank">About IMT-GT</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold md:mt-0 text-gray-700 hover:text-sky-600"
+              href="previous">Previous Conferences</a>
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-700  md:mt-0 hover:text-sky-600 "
+              href="contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+  <!-- End of Navbar -->
+
+  <!-- Header -->
+  <div class="mt-16">
+
+
+
+        <div class="min-w-screen my-52 flex items-center justify-center px-5 py-5" x-data=>
+          <div class="w-fit md:w-2/3">
+        
+            <h1
+              class=" font-bold text-5xl text-center mb-10 text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 ">
+              Schedule of ICMSA 2023 </h1>
+        
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-lg text-gray-800 text-center mb-5">Day 1 (Monday, April 10, 2023)</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PROGRAM DESCRIPTION
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      DETAIL SCHEDULE
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      ROOM
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      08.15-08.45
+                    </th>
+                    <th rowspan="8"  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      OPENING CEREMONY
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Registration and Joining to Virtual Room
+                    </th>
+                    <th rowspan="10"  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Hybrid (Onsite and Online by Zoom)
+                    </th>
+                  </tr>
+
+                  <tr class=" odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      08.45-09.00
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Traditional Dance (Rapa’i Geleng)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.00-09.05
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Qur'an recitation / Prayer <span class="font-extrabold">Irvan S</span> 
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.05-09.10
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Singing the National Anthem of Indonesia “Indonesia Raya”
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.10-09.15
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Comittee Reporting by Chairman <br> <span class="font-extrabold">Munawar, S.Si, M. App. Stats, Ph.D.</span> 
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.15-09.20
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Welcoming Remark by<span class="font-extrabold"> Prof. Ir. Gamantyo Hendrantoro., Meng., PhD.</span>
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.20-09.25
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Welcoming Remark by the Rector of Universitas Syiah Kuala <br> <span class="font-extrabold">Prof. Dr. Ir. Marwan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.25-09.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Profile of Statistics Department USK (video)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.30-11.00
+                    </th>
+                    <th rowspan="2" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      PLENARY SESSION
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Keynote Speaker I <span class="font-extrabold"> Prof. Dr. Don McNeil</span> (Prince of Songkla University, Thailand) <br> Souvenir for keynote I
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      11.00-12.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Keynote Speaker II <span class="font-extrabold"> Prof. Dr. rer. pol. Heri Kuswanto</span> (Institut Teknologi Sepuluh Nopember, Indonesia) <br> Souvenir for keynote II
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  ">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      12.30-14.00
+                    </th>
+                    <th colspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Break
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      14.00-16.00
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Aceh Dalam Angka
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Onsite (Auditorium FMIPA)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  ">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      16.00
+                    </th>
+                    <th colspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Closing Day 1
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-lg text-gray-800 text-center mb-5">Day 2 (Tuesday, April 11, 2023)</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PROGRAM DESCRIPTION
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      DETAIL SCHEDULE
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      ROOM
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="border-b  ">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      08.30-09.00
+                    </th>
+                    <th colspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Registration
+                    </th>
+                  </tr>
+
+                  <tr class=" odd:bg-white even:bg-gray-100">
+                    <th rowspan="4" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.00-10.30
+                    </th>
+                    <th rowspan="4" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      PARALLEL SESSION ICMSA
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 1
+                    </th>
+                    <th rowspan="4" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Hybrid (Onsite and Online by Zoom)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 2
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 3
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 4
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  ">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      10.30-10.40
+                    </th>
+                    <th colspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Break
+                    </th>
+                  </tr>
+
+                  <tr class=" odd:bg-white even:bg-gray-100">
+                    <th rowspan="3" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      10.40-12.00
+                    </th>
+                    <th rowspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      PARALLEL SESSION ICMSA
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 5
+                    </th>
+                    <th rowspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Hybrid (Onsite and Online by Zoom)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 6
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Parallel Session 7
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      12.00-13.00
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      PLENARY SESSION
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Keynote Speaker III <span class="font-extrabold"> Prof. Dr. Sebastian Vollmer</span> (University of Göttingen, Germany) <br> Souvenir for keynote III
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Online by Zoom
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  ">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      13.00-14.30
+                    </th>
+                    <th colspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Break
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      14.30-15.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Aceh Dalam Angka
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Onsite (Auditorium FMIPA)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      15.30-15.45
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      ICMSA
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Best presenter award and best paper
+                    </th>
+                    <th rowspan="2" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Onsite (Auditorium FMIPA)
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  odd:bg-white even:bg-gray-100">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      15.45-15.55
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      CLOSING CEREMONY
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Closing remark by Rector Universitas Syiah Kuala
+                    </th>
+                  </tr>
+
+                  <tr class="border-b  ">
+                    <th scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      15.55
+                    </th>
+                    <th colspan="3" class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Closing Day 2
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <h1
+              class="mt-16 font-bold text-3xl text-center mb-10 text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-indigo-500 ">
+              Parallel Session Schedule </h1>
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 1</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Rahma Zuhra</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="8" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.00-10.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570882108
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Extraction of Portable Executable Malware Features UsingAudio Signal Techniques <br>
+                      <span class="font-extrabold">Dani Agung Prastiyo; Budi Rahardjo </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891418
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Multiclass Classification for Seizure Detection on Epilepsy Using ECG Signal <br>
+                      <span class="font-extrabold">Zumarsiyah Mahsyari; Diah Puspito Wulandari; Santi Wulan Purnami; Wardah Rahmatul Islamiyah </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891416
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Valuation of Forest Carbon Stock Baseline in Papua Province Using Geo-AI Generated Dataset <br>
+                      <span class="font-extrabold">Fabian Surya Pramudya; Leslie Bong; Endreas Rolling;
+                        Agni Alam Awirya; Alexander Agung Santoso Gunawan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893079
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      The LASSO Quantile Regression Model for Financial Risk Meter of the Banking in Indonesia <br>
+                      <span class="font-extrabold">Husna Afanyn Khoirunissa; Dedy Dwi Prastyo; Setiawan
+                        Setiawan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893486
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Serverless Stream Based Processing for Real Time Credit Card Fraud Detection Using Machine Learning <br>
+                      <span class="font-extrabold">Ravali Attivilli; J. Angel Arul Jothi</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570894618
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Study of Mathematical Models of Type 2 Diabetes Mellitus and Its Complications <br>
+                      <span class="font-extrabold">Afiatun Maghfirah; Basri A. Gani; Marwan Ramli; Muhammad Ikhwan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893660
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Lung Cancer Mortality Pattern in Thailand, 2019 <br>
+                      <span class="font-extrabold">Nurainee Chealong; Rattikan Saelim; Apiradee Lim; Surasak Sangkhathat; Kanitta Bundhamcharoen; Nuttapat Makka</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 2</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Vera Halfiania</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="6" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.00-10.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570880813
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Cubic Spline Knots on Sulawesi Island Land Surface Temperature Decrease Variation <br>
+                      <span class="font-extrabold">Munawar; Prasetya Tofan Agung Eka; Marzuki; Muhammad Irhamsyah; Muhammad Iqbal </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893217
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Analysis of the Influence of Self-Efficacy, Belief and Mathematical Competence on Statistical Literacy Using Structural Equation Modeling (SEM) <br>
+                      <span class="font-extrabold">Rini Oktavia; Satria Liswanda; Rahma Zuhra</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893566
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Analysis of Factors That Affect Poverty in Indonesia Using the Structural Equation Modeling-Partial Least Square (SEM-PLS) Method <br>
+                      <span class="font-extrabold">Nurhafifah; Saiful Mahdi; Rini Oktavia</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893586
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Identification of Students Service Satisfaction Using Binary Logistic Regression: Case Study in Faculty of Mathematics and Natural Science, Universitas Syiah Kuala <br>
+                      <span class="font-extrabold">Latifah Rahayu; Nany Salwa; Baiduri Orida Putri;
+                        Rumaisa Kruba; Evi Ramadhani; Nurhasanah</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893599
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Quantile Regression Neural Network (QRNN) and Hybrid NN - QRNN Model for Forecasting Rice Productivity in Indonesia <br>
+                      <span class="font-extrabold">Rumaisa Kruba; Selvi Mardalena; Latifah Rahayu; Saiful
+                        Mahdi; Novi Reandy Sasmita; Zurnila Marli Kesuma;
+                        Razief Perucha Fauzie Afidh; Alim Misbullah; Hizir Sofyan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893664
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Trend Analysis for Indonesia's Inflation Index Using Hierarchical Clustering <br>
+                      <span class="font-extrabold">Ridha Ferdhiana; Aulia Sahputra; Marzuki Marzuki; Novi Reandy Sasmita</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 3</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Ridha Ferdhiana</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="7" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.00-10.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570881215
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Load Identification Based on Non-Intrusive Load Monitoring Using Semi Supervised Learning Technique <br>
+                      <span class="font-extrabold">Andi Shridivia Nuran; Muhammad Ary Murti;
+                        Fiky Yosef Suratman </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570888846
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Performance Comparison of Region-Based Segmentation Algorithms on Natural and Remote Sensing Images <br>
+                      <span class="font-extrabold">Asim Shoaib; Mogana Vadiveloo; Seng Poh Lim; Suthashini Subramaniam</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570890096
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      UNETR-Based Road Extraction from Ultra High-Resolution Images <br>
+                      <span class="font-extrabold">Arthur Siburian; Sussi; Emir Husni; Rahadian Yusuf</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570890608
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Reward Shaping for Mobile Robot Navigation Based on Deep Reinforcement Learning <br>
+                      <span class="font-extrabold">Yusuf Kurnia Badriawan; Ahmad Ataka
+                        Awwalur Rizqi;
+                        Noor Akhmad Setiawan; Adha Imam Cahyadi</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891020
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      SDDS: Damage Level Determination System for Post- Natural Disaster Sector Based on Building Characteristics <br>
+                      <span class="font-extrabold">Agung Teguh Wibowo Almais; Adi Susilo; Agus Naba;
+                        Moechammad Sarosa; Cahyo Crysdian; Yunifa Miftachul
+                        Arif</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891218
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Signal Classification Using Principal Component Analysis and Extreme Learning Machine <br>
+                      <span class="font-extrabold"></span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570876321
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      A New Approach Extreme Learning Machine Based on Random Forest Classifier for Diagnosed Diabetes Mellitus <br>
+                      <span class="font-extrabold">Dimas Chaerul Ekty Saputra; Khamron Sunat</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 4</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Selvi Mardalena</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="7" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      09.00-10.30
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891180
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Convective Rainfall Estimation from Radar Measurement Using Tree-Based Machine Learning <br>
+                      <span class="font-extrabold">Bernadeta Nafirsta Ayu Nareswari; Maulana Putra; Djati Handoko </span>
+                    </th>
+                  </tr>]
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891182
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Determination of the Automated Weather Observing System (AWOS) Maintenance Cost Index Based on Fuzzy Inference System <br>
+                      <span class="font-extrabold">Maulana Putra; Sugiarto; Hanif Andi Nugraha; Aly Ilyas;
+                        Aries Erwanto; Budi Santoso; Arum Indri Retnoningsih;
+                        Asri Susilowati; Anistia Malinda Hidayat</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891911
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Seriousness Prediction in Anti-Infective-Induced Adverse Drug Reactions (ADRs) Using Machine Learning Algorithms <br>
+                      <span class="font-extrabold">Sopit Sittiphan; Apiradee Lim; Nurin Dureh;
+                        Kwankamon Dittakan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893235
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Breast Cancer Classification in Ultrasound Images Based on Deep Neural Networks Models <br>
+                      <span class="font-extrabold">Hiba Diaa Alrubaie; Hadeel Aljobouri;
+                        Zainab J. AL_jobawi</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570892253
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Classification of Sweet and Sour Taste Using Electroencephalography (EEG) <br>
+                      <span class="font-extrabold">Ulfi Widya Astuti; Adhi Dharma Wibawa; Yuri Pamungkas</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893624
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Performance Analysis of Face Recognition Using Machine Learning and Modified Deep Learning Methods <br>
+                      <span class="font-extrabold">Ahmad Maruf Firman; Zahir Zainuddin; Muhammad
+                        Niswar</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891040
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Multi-Output Milk Classification Based on Type and Processing Utilizing Deep Learning and Hyperspectral Acquisition System<br>
+                      <span class="font-extrabold">Firliyani Rahmatia Ningsih; Adhi Harmoko Saputro</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 5</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Fitriana AR</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="5" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      10.40-12.00
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570886786
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Data Analytics Between Regional Minimum Wage and Poverty Rate Per Province in Indonesia <br>
+                      <span class="font-extrabold">Adhi Dharma Wibawa; Rama Yusuf Mahendra
+                        Yuri Pamungkas;</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570887645
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Depression Detection System for Social Media User <br>
+                      <span class="font-extrabold">Mochamad Rizky Febriansyah; Nicholas; Said
+                        Achmad; Derwin Suhartono</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570889159
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Blockchain Effects on Cashless Payments in Indonesia - A Systematic Literature Review’ <br>
+                      <span class="font-extrabold">Leonardo Wijaya; Vivi Asfina; Matthew Tirtasaputra; Said Achmad; Rhio Sutoyo</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891555
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Authentication on a Decentralized Blockchain Mechanism for IoT-Based Outdoor Temperature Monitoring Systems <br>
+                      <span class="font-extrabold">Yehezkiel Kacik Micha Simbuang; Farah Afianti</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893627
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Implementation of DBSCAN and K-Means Algorithm for Clustering Agricultural Drone Flying Areas <br>
+                      <span class="font-extrabold">Try Kusuma Wardana; Yandra Arkeman; Karlisa
+                        Priandana; Farohaji Kurniawan; Gunawan Setyo
+                        Prabowo; Fadilah Hasim</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 6</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Rumaisa Kruba</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="6" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      10.40-12.00
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570890486
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      A Bayesian Approach to Estimating Parameter of Extreme Value Distribution of Rainfall in Jawa Timur Indonesia <br>
+                      <span class="font-extrabold">Diego Irsandy; Suci Astutik; Ani Budi Astuti </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570890801
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Comparative Study of the Interconnected Street Light Luminance Levels Control for Energy Efficiency <br>
+                      <span class="font-extrabold">Maya Itasari; Faizal Arya Samman; A. Ejah Umraeni Salam </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891291
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Optimal Control Strategy with Low Fuel Consumption of DFIG-Diesel Engine Generator Under Variable Speed Condition <br>
+                      <span class="font-extrabold">Yuzka Azmi; Heri Suryoatmojo; Soedibyo</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891409
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Reverse Osmosis Water Control and Preparation System for Dialysate Mixing in Hemodialysis Machine <br>
+                      <span class="font-extrabold">Gora Indiraja Shafa; Tri Arief Sardjono; Eko Agus
+                        Suprayitno</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891431
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Modeling the COVID-19 Transmission Risk Using Log Gaussian Cox Process: A Case Study in Surabaya and Sidoarjo <br>
+                      <span class="font-extrabold">Alwan Fadlurohman; Achmad Choiruddin; Yusrianti
+                        Hanike Sharia; Muhammad Ahsan</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570891892
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      A Detailed Mathematical Modeling and Simulation of Synchronous Generator Using Euler Discretization <br>
+                      <span class="font-extrabold">Sudiro; Adha Imam Cahyadi; Fransisco Danang Wijaya</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+            <div class="relative overflow-x-auto  mt-10">
+              <p class="font-bold text-xl text-gray-800 text-left">Parallel Session 7</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Day/Date &emsp; : Tuesday, April 11th, 2023</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Room &emsp;&emsp;&emsp;: Hybrid (Onsite and Online by Zoom)</p>
+              <p class="font-bold text-lg text-gray-800 text-left ">Moderator &ensp; : Alim Misbullah</p>
+              <table class="w-full text-base text-left text-gray-500 border-black border">
+                <thead class="text-sm text-gray-700 uppercase bg-sky-300">
+                  <tr>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Time (GMT +7)
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      PAPER ID
+                    </th>
+                    <th scope="col" class="px-6 py-3 border-black border">
+                      Paper Title
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th rowspan="6" scope="row" class="px-6 py-4 font-semibold text-gray-900 dark:text-white whitespace-nowrap border-black border">
+                      10.40-12.00
+                    </th>
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893559
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Modeling Stunting in Indonesia Using Semiparametric Spline Truncated Regression <br>
+                      <span class="font-extrabold">Lubna Atiawilda; Sri Sulistijowati Handajani, MSi.; Etik
+                        Zukhronah; Hasih Pratiwi </span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893548
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Model Predictive Control Design Under Stochastic Parametric Uncertainties <br>
+                      <span class="font-extrabold">Heri Purnawan; Subchan; Tahiyatul Asfihani; Seungkeun
+                        Kim</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893553
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Recursive Feature Elimination with Cross-Validation in Support Vector Machine for Recognizing Food Insecurity Cases in West Java <br>
+                      <span class="font-extrabold">Bagus Sartono; Dyah Arum Trisnawati; Gerry Alfa Dito;
+                        Alfian Futuhul Hadi; Evi Ramadhani</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893581
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Dynamic Economic Dispatch Problem in Hybrid Photovoltaic Based Power System Using Turbulent Flow of Water-Based Optimization <br>
+                      <span class="font-extrabold">Moh Erdianto Triputradi; Ni Ketut Aryani; Rony Seto
+                        Wibowo; Berliandra Oktaviani</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893623
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Optimization of Hybrid Generation System for Alternative Energy <br>
+                      <span class="font-extrabold">Annisa Nurfadhilah; Indar Chaerah Gunadin; Syafaruddin</span>
+                    </th>
+                  </tr>
+
+                  <tr class="  odd:bg-white even:border-black border">
+                    <th class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      1570893679
+                    </th>
+                    <th  class="px-6 py-4 font-medium text-gray-900 border-black border">
+                      Analysis of Clean Production Principle Implementation in Palm Oil Production <br>
+                      <span class="font-extrabold">Roja Safitriyawi; Irwansyah; Husni; Edy Fradinata;</span>
+                    </th>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            
+            
+          </div>
+        </div>
+  </div>
+
+  <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+    <div class="">
+      <a title="Email ICMSA 2023 Team" href="mailto:icmsa@usk.ac.id" target="_blank"
+        class=" content-center block w-10 h-10 md:w-14 md:h-14 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+        <img class="object-cover object-center  w-full h-full rounded-full" src="https://img.icons8.com/fluency/48/null/circled-envelope.png"/> 
+      </a>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+<footer class="p-4 bg-gray-800 sm:p-6">
+  <div class="md:flex md:justify-between md:mx-24">
+    <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Organizer:</h2>
+      <a target="_blank" href="https://usk.ac.id/" class="flex items-center">
+        <img src="img/icon/logo_usk_baru.png" class="mr-3 h-20 mb-3 drop-shadow-md" alt="USK Logo">
+      </a>
+      <a target="_blank" href="http://stat.unsyiah.ac.id/newsite/" class="flex items-center">
+        <img src="img/icon/logo-js-footer-300x92.png" class="mr-3 h-20 drop-shadow-md" alt="Statistics USK Logo">
+      </a>
+    </div>
+    <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Co-Organizer:</h2>
+      <a target="_blank" href="https://www.isi-web.org/" class="flex items-center">
+        <img src="img/icon/isi_logo.png" class="mr-3 h-24 drop-shadow-md" alt="ISI Logo">
+      </a>
+      <a target="_blank" href="https://imtgt.org/" class="flex items-center">
+        <img src="img/imt-gt.png" class="mr-3 h-24 drop-shadow-md" alt="IMT-GT Logo">
+      </a>
+    </div>
+    <!-- <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Technical Sponsor:</h2>
+      <a target="_blank" href="https://www.ieee.org/" class="flex items-center">
+        <img src="img/icon/IEEE_logo.png" class="mr-3 h-24 drop-shadow-md" alt="IEEE Logo">
+      </a>
+    </div> -->
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div class="mb-6 md:mb-0">
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Contact Us</h2>
+      <p class="text-gray-500 ">
+        Universitas Syiah Kuala <br>
+        Jl. Teuku Nyak Arief No.441,<br>
+        Kopelma Darussalam, Syiah Kuala <br>
+        Banda Aceh, Indonesia 23111 <br>
+      </p>
+    </div>
+
+    <div>
+      <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Visitor</h2>
+      <div href="https://info.flagcounter.com/izBE"><img
+          src="https://s11.flagcounter.com/count2/izBE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+          alt="Flag Counter" border="0"></div>
+    </div>
+
+    <!-- <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+      <div>
+      </div>
+      <div>
+        <h2 class="mb-3 font-semibold text-lg text-gray-100 ">Contact Us</h2>
+        <p class="text-gray-500 ">
+          Universitas Syiah Kuala <br>
+          Jln. Syech Abdurrauf No. 03, <br>
+          Kopelma Darussalam, <br>
+          Banda Aceh, Indonesia 23111 <br>
+          Call Us: +62 813 7740 2100
+        </p>
+      </div>
+      <div>
+        <a href="https://info.flagcounter.com/izBE"><img
+            src="https://s11.flagcounter.com/count2/izBE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+            alt="Flag Counter" border="0"></a>
+      </div>
+    </div> -->
+  </div>
+  <hr class="my-6 border-gray-500 sm:mx-auto lg:my-8">
+  <div class=" items-center text-gray-100">
+    <p class="text-sm  text-center ">© 2023 The 18th IMT-GT ICMSA. All Rights Reserved.</p>
+    <p class="text-sm  text-center ">Developed by Statistics Department, Universitas Syiah Kuala</p>
+  </div>
+</footer>
+  <!-- End of Footer -->
+
+
+</body>
+
+</html>
